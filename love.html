@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR TITIW</title>
+    <link rel="stylesheet" href="love.css">
+</head>
+
+<body>
+    <!-- markup format  -->
+
+    <!-- <div class="bubble">
+        <svg class="heart" viewBox="0 0 600 500">
+            <path d="M300,150 C500,10 600,300 300,400 C0,300 100,10 300,150" />
+        </svg>
+        <div class="bubble-dummy"></div>
+    </div> -->
+    <div class="love">
+        <div class="wrapper">
+            <div class="content">
+                <h2 class="typewrite text-white" data-period="2000"
+                    data-type='[ "Haiii Titiw!.","Dapdap cuma mau bilang ke titiw    ", 
+                    "Kalo dapdap tuh......    ", 
+                    "GAMAU TITIW PERGI DARI DAPDAP TANPA ALESAN! &#128544    ", 
+                    "AWAS AJA KALO TITIW TIBA TIBA NINGGALIN DAPDAP! &#128544    ", 
+                    "Nanti kalo dapdap sedih gimana?      ", 
+                    "Ga kasian apa titiw sama dapdap? &#128542    ", 
+                    "Titiw itu rumah bagii dapdap!    ", 
+                    "Nanti kalo titiw gaada dapdap kemana pulangnya? &#128542      ", 
+                    "Nanti dapdap cerita kesiapa lagii kalo titiw gaada? &#128542      ", 
+                    "Kalo nanti dapdap kehilangan arah gimana?      ", 
+                    "Cuma titiw yang bisa bikin dapdap tenang &#128542      ", 
+                    "Intinya....      ", 
+                    "DAPDAP GAMAU JAUH DARI TITIW!      ", 
+                    "DAPDAP SAYANG BANGET KE TITIW!      ", 
+                    "I LOVE YOU TITIW U ARE MY FAVORITE PERSON &#10084                " ]'>
+                    <span class="wrap">Welcome, BABE!</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 5) || 2000;
+            this.txt = "";
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) {
+                (delta /= 0), 9;
+            }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === "") {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName("typewrite");
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute("data-type");
+                var period = elements[i].getAttribute("data-period");
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            // var css = document.createElement("style");
+            // css.type = "text/css";
+            // css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            // document.body.appendChild(css);
+        };
+    </script>
+</body>
+
+</html>

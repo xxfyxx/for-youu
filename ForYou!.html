@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanyaan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="banter-loader blur" id="loading">
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+    </div>
+
+    <!-- <div class="loading" id="loading">
+        <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+    </div> -->
+    <div class="wrapper" id="container">
+        <div class="container w-100">
+
+            <!-- Awal -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="pertama">
+                <div class="card-body">
+                    <h5 class="card-title">Halo buat kamu yang liat ini</h5>
+                    <p class="card-text">Aku cuma mau ngasih tau sesuatu buat kamuu</p>
+                    <button onclick="lanjut()" class="btn btn-success">Lanjut</button>
+                    <button onclick="tidak()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Awal end -->
+
+            <!-- Tanggal Lahir -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="kedua">
+                <div class="card-body">
+                    <h5 class="card-title">Sebelumnya aku mau nanya</h5>
+                    <p class="card-text">Kamu Adesty bukan?</p>
+                    <p class="card-text">Kalau kamu beneran ades coba isi tanggal lahirnya!</p>
+                    <input type="text" class="form-control" id="lahir">
+                    <br>
+                    <button onclick="lanjutDua()" class="btn btn-success">Lanjut</button>
+                    <button onclick="tidak()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Tanggal Lahir end -->
+
+            <!-- Nama  -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="ketiga">
+                <div class="card-body">
+                    <h5 class="card-title">Okee udah benerr</h5>
+                    <p class="card-text">Eitss jangan seneng dulu bisa aja kan nyari dulu tanggal lahirnya ades kapan</p>
+                    <p class="card-text">Coba sekali lagi dehh, nama lengkap ades siapa?</p>
+                    <input type="text" class="form-control" id="nama">
+                    <br>
+                    <button onclick="lanjutTiga()" class="btn btn-success">Lanjut</button>
+                    <button onclick="tidak()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Nama  end -->
+
+            <!-- Maap  -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="keempat">
+                <div class="card-body">
+                    <h5 class="card-title">Okeee aku percaya beneran titiw ternyata</h5>
+                    <p class="card-text">Ribet ya? maapin soalnya di sengaja sih hehehe, takutnya kan ada yang masuk ke sini selain titiw jadi
+                        aku pastiin dulu biar ga sembarang orang bisa masuk</p>
+                    <br>
+                    <button onclick="maap()" class="btn btn-success">Dimaapin</button>
+                    <button onclick="engga()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Maap end -->
+
+            <!-- Dimaapin  -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="kelima">
+                <div class="card-body">
+                    <h5 class="card-title">Yess dimaapinn</h5>
+                    <p class="card-text">Makasih yaa udah mau maapin akuu. Aku punya hadiah nihh buat titiw mau liat ga?</p>
+                    <br>
+                    <button onclick="test()" class="btn btn-success">Liat</button>
+                    <button onclick="engga()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Dimaapin end -->
+
+            <!-- Test  -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="keenam">
+                <div class="card-body">
+                    <h5 class="card-title">EITSSS!</h5>
+                    <p class="card-text">Sebelum liat hadiahnya kamu harus jawab pertanyaan satu lagi dari
+                        aku, gampang kok cuma soal tentang pacar kamu</p>
+                    <p>Waktu itu dapdap ngasih titiw kado pertama kali apaa sih?</p>
+                    <input type="text" class="form-control" id="test">
+                    <br>
+                    <button onclick="jawab()" class="btn btn-success">Jawab</button>
+                    <button onclick="tidak()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Test end -->
+
+            <!-- Hadiah  -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="ketujuh">
+                <div class="card-body">
+                    <h5 class="card-title">Yeayy 100 buat titiw</h5>
+                    <p class="card-text">Makasih yaa udah mauu buka file ini sampe bener semua
+                        pertanyaannya salut dehhh sama titiw. Hadiahnya bisa kamuu liat dengan cara klik tombol
+                        hadiah di bawah ini
+                    </p>
+                    <br>
+                    <button onclick="hadiah()" class="btn btn-success">Liat</button>
+                    <button onclick="jebakan()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Hadiah end -->
+
+
+            <!-- Gamau -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="gamau">
+                <div class="card-body">
+                    <h5 class="card-title">Yahh ga mauu lanjut &#128543</h5>
+                    <p class="card-text">Ya udah deh gapapa, makasih yaa udah mauu luangin waktunya buat buka file ini. Dadah Manisnya dapdap &#10084</p>
+                </div>
+            </div>
+
+            <!-- Gamau end -->
+
+            <!-- Boong -->
+
+            <div class="card text-center mb-3" style="width: 18rem;" id="boong">
+                <div class="card-body">
+                    <h5 class="card-title">KAMU BUKAN TITI!</h5>
+                    <p class="card-text">Ngapain kamuu disini dapdap bikin cuma buat titi! &#128544<br>
+                        kamu bukan titi soalnya kalo titi pasti tauu apa jawabannya!<br>
+                        KAMU JANGAN COBA COBA BUAT NYELESAIN PERTANYAAN INI <br>
+                        soalnya ini spesial hanya untuk TITI seorang!</p>
+                    <br>
+                    <button onclick="ulang()" class="btn btn-success">Ulang</button>
+                    <button onclick="tidak()" class="btn btn-danger">Tidak</button>
+                </div>
+            </div>
+
+            <!-- Boong end -->
+
+        </div>
+
+
+    </div>
+
+    <div class="present" id="present">
+        <div class="word text-center">
+            <p>Aku harap titi sukaa sama ini yaaa, walaupun ini ga seberapa dan mungkin keliatannya biasa aja, tapi aku bikin ini cuma buat kamu.
+                I LOVE ADESTY VALENINA MEDINATY! &#10084
+            </p>
+        </div>
+        <div class="tombol">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title">FLIP CARD</p>
+                        <p>Hover Me</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">LOVE</p>
+                        <div class="d-flex justify-content-center">
+                            <button onclick="liat()" class="bagus">
+                                <span> Button</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
